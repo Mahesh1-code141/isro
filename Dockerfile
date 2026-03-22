@@ -1,6 +1,6 @@
 FROM nginx:alpine
 
-# Remove default nginx website
+# Rmove default nginx website
 RUN rm -rf /usr/share/nginx/html/*
 
 # Copy project files into nginx html directory

@@ -2,7 +2,7 @@ pipeline {
 agent any
 
 environment {
-    DOCKER_IMAGE = "rajeshtutta123/isro_project_img"
+    DOCKER_IMAGE = "mahesh2452/isro_project_img"
 }
 
 stages {
@@ -10,8 +10,8 @@ stages {
     stage('GIT CHECKOUT') {
         steps {
             git branch: 'main',
-            credentialsId: 'rajeshcred',
-            url: 'https://github.com/rajeshtutta/Isro1.git'
+            credentialsId: 'Github',
+            url: 'https://github.com/Mahesh1-code141/isro.git'
         }
     }
 
@@ -23,7 +23,7 @@ stages {
 
     stage('Docker Login') {
         steps {
-            withCredentials([usernamePassword(credentialsId: 'dockerhub-cred', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
+            withCredentials([usernamePassword(credentialsId: 'Docker_CRED', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
                 sh 'echo $PASS | docker login -u $USER --password-stdin'
             }
         }
@@ -39,7 +39,7 @@ stages {
         steps {
             sh '''
             docker rm -f isro_cont || true
-	    docker run -d -p 1996:80 --name isro_cont $DOCKER_IMAGE:latest
+	    docker run -d -p 2007:80 --name isro_cont $DOCKER_IMAGE:latest
             '''
         }
     }

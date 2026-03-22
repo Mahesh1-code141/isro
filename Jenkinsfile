@@ -34,7 +34,7 @@ stages {
             sh 'docker push $DOCKER_IMAGE:latest'
         }
     }
-
+#qqq
     stage('Deploy Container') {
         steps {
             sh '''

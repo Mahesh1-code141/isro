@@ -2,7 +2,7 @@ pipeline {
 agent any
 
 environment {
-    DOCKER_IMAGE = "mahesh2452/isro_project_img"
+    DOCKER_IMAGE = "mahesh2452/isro1_project_img"
 }
 
 stages {
